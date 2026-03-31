@@ -11,7 +11,7 @@ jobs:
        runs-on:  ubuntu-latest
 
       steps:
-        names: printing greetings
+        -names: printing greetings
         run:  echo " welcome to team $Name"
         
         
