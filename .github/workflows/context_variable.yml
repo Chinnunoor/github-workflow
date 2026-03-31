@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch:
+jobs:
+ noor:
+  runs-on: ubuntu-latest
+  steps:
+    - name : yoyo
+    run: |
+          echo "working directory: ${{ github.workspace}}"
+          echo "workflow name : ${{ github.workflow}}"
