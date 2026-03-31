@@ -4,7 +4,8 @@ jobs:
  noor:
   runs-on: ubuntu-latest
   steps:
+  
     - name : yoyo
-    run: |
+      run: |
           echo "working directory: ${{ github.workspace}}"
           echo "workflow name : ${{ github.workflow}}"
