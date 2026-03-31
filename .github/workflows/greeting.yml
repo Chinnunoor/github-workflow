@@ -1,0 +1,16 @@
+
+name: greethings
+on: 
+  push:
+
+env:
+ Name : noor
+
+   jobs:
+     job_name:
+       runs-on:  ubuntu-latest
+
+      steps:
+        names: printing greetings
+        run:  echo " welcome to team $Name"
+        
