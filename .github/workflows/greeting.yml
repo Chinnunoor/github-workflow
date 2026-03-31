@@ -12,4 +12,4 @@ jobs:
 
     steps:
       - name: printing greetings
-        run: echo "welcome to team $Name"
+        run: echo "welcome to team $Name ${{vars.person_name}}!"
