@@ -12,7 +12,7 @@ jobs:
   noor:
     runs-on: ubuntu-latest
 
-    -uses: echo "hello noor" 
+    run: echo "hello noor" 
 
 
     
