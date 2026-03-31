@@ -1,17 +1,15 @@
+name: greetings
 
-name: greethings
-on: 
+on:
   push:
 
 env:
- Name : noor
+  Name: noor
 
 jobs:
-     job_name:
-       runs-on:  ubuntu-latest
+  job_name:   # 👈 must be indented
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: printing greetings
-          run:  echo " welcome to team $Name"
-        
-        
+    steps:
+      - name: printing greetings
+        run: echo "welcome to team $Name"
