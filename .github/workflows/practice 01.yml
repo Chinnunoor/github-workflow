@@ -4,8 +4,9 @@ on:
     inputs:
       message:
         description: Enter the text
-        type: string
+        
         required: true
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
