@@ -1,11 +1,12 @@
 name: input test
-on: workflow_dispatch
-  input:
-    message:
-      options:
-        - hello
-        - hi
-        - how are you?
+on: 
+  workflow_dispatch
+    input:
+      message:
+        options:
+          - hello
+          - hi
+          - how are you?
 jobs:
   build:
     runs-on: ubuntu-latest
