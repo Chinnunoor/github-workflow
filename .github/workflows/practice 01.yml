@@ -1,0 +1,15 @@
+name: input test
+on: workflow_dispatch
+  input:
+    message:
+      options:
+        - hello
+        - hi
+        - how are you?
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing
+        run: echo "hello "
+        
