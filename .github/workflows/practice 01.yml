@@ -1,16 +1,19 @@
-name: input test
+name: test1
 on: 
-  workflow_dispatch
-    input:
+  workflow_dispatch:
+    inputs:
       message:
-        options:
-          - hello
-          - hi
-          - how are you?
+        description: Enter the text
+        type: string
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: printing
-        run: echo "hello "
+      - name: printing value
+        run: echo "hello message"
+        
+          
+        
         
