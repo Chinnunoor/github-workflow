@@ -1,0 +1,17 @@
+name: test2
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Enter the text
+        required: true
+        type: string
+
+      environment:
+        description: Choose environment
+        required: true
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
