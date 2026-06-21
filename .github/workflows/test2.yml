@@ -15,3 +15,9 @@ on:
           - dev
           - test
           - prod
+jobs:
+  build:
+    runs-on: macos-13-large
+    steps:
+      - name: priting  value
+        run: echo " hello world"
