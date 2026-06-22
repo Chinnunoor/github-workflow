@@ -1,0 +1,52 @@
+# Create workflow:
+
+# Name: User Details
+
+# Manual trigger
+
+# Inputs:
+# name → string
+# city → string
+
+# Steps:
+
+# Step 1:
+# id: details
+# create 2 outputs:
+# user-name = selected name
+# user-city = selected city
+
+# Step 2:
+# print:
+# Hello NAME from CITY
+
+# Expected when user enters Noor and Charlotte:
+
+# Hello Noor from Charlotte
+
+name: User Details
+on:
+  workflow_dispatch: 
+    inputs:
+      name:
+        description: Enter name
+        required: true
+        type: string
+
+      city:
+        description: Enter City
+        required: true
+        type: string
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: name
+        id: details
+        run: |
+           echo " name=${{inputs.name}} " >> "$GITHUB_OUTPUT"
+           echo " city=${{inputs.city}} " >> "$GITHUB_OUTPUT"
+
+      - name: kemck
+        run: echo "Hello ${{steps.details.outputs.name}} from ${{steps.details.outputs.city}}"
+      
