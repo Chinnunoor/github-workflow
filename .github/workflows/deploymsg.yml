@@ -1,0 +1,42 @@
+# Name: Deploy Message
+
+# Manual trigger
+
+# Inputs:
+# app-name → string
+# environment → choice: dev, test, prod
+
+# Step 1:
+# id: deploy-info
+# Create output:
+# message=Deploying APP_NAME to ENVIRONMENT
+
+# Step 2:
+# Print the message output
+name: Deploy Message
+on: 
+  workflow_dispatch: 
+    inputs:
+      app-name:
+        description: enter app-name
+        required: true
+        type: string
+      environment:   
+        description: choose environment
+        required: true
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploying
+        id: deploy-info
+        run: echo " message=Deploying ${{ inputs.app-name }} to ${{ inputs.environment }}" >> "$GITHUB_OUTPUT"T"
+      - name: printing
+        run: echo "${{ steps.deploy-infp.outputs.message}}"
+        
+       
