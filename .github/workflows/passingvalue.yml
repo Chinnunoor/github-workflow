@@ -20,5 +20,5 @@ jobs:
         id : GreetingPractice
         run: echo "Hello ${{inputs.name}} >> "$GITHUB_OUTPUT"
 
-        -name: output
+      - name: output
         run: echo " ${{ steps.GreetingPractice.outputs.name }}"
