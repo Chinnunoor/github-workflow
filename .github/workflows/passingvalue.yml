@@ -1,0 +1,24 @@
+# Create a GitHub Actions workflow "Greeting Practice"
+# Trigger: workflow_dispatch
+# Input: name (string, required)
+# Job: build (ubuntu-latest)
+# Step 1: create output message = "Hello <name>" using GITHUB_OUTPUT
+# Step 2: print the output message
+name: passing value
+on: 
+  workflow_dispatch: 
+    inputs:
+      name:
+        description: enter name
+        required: true
+        type: string
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing
+        id : GreetingPractice
+        run: echo "Hello ${{inputs.name}} >> "$GITHUB_OUTPUT"
+
+        -name: output
+        run: echo " ${{ steps.GreetingPractice.outputs.name }}"
