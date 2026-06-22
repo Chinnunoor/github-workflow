@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: printing
         id : GreetingPractice
-        run: echo "Hello ${{inputs.name}}" >> "$GITHUB_OUTPUT"
+        run: echo "message=${{inputs.name}}" >> "$GITHUB_OUTPUT"
 
       - name: output
         run: echo " ${{ steps.GreetingPractice.outputs.name }}"
