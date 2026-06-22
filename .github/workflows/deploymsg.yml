@@ -14,29 +14,31 @@
 # Step 2:
 # Print the message output
 name: Deploy Message
-on: 
-  workflow_dispatch: 
+
+on:
+  workflow_dispatch:
     inputs:
       app-name:
-        description: enter app-name
-        required: true
         type: string
-      environment:   
-        description: choose environment
         required: true
+
+      environment:
         type: choice
+        required: true
         options:
           - dev
           - test
           - prod
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: deploying
+      - name: deploy step
         id: deploy-info
-        run: echo " message=Deploying ${{ inputs.app-name }} to ${{ inputs.environment }}" >> "$GITHUB_OUTPUT"T"
-      - name: printing
-        run: echo "${{ steps.deploy-info.outputs.message}}"
-        
+        run: echo "message=Deploying ${{ inputs.app-name }} to ${{ inputs.environment }}" >> "$GITHUB_OUTPUT"
+
+      - name: print step
+        run: echo "${{ steps.deploy-info.outputs.message }}"
        
