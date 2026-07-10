@@ -1,0 +1,16 @@
+name: testing number input
+on:
+  workflow_dispatch: 
+    inputs:
+      Environment:
+        required: true
+        description: "enter a number"
+        type: number
+jobs:
+  test:
+    runs-on: macos-13
+    steps:
+      - name: printing name
+        run: echo "hi ${{ inputs.Environment }}"
+
+  
