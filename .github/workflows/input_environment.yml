@@ -1,5 +1,4 @@
-name: Deploy App
-
+name: Input_Environment
 on:
   workflow_dispatch:
     inputs:
