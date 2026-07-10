@@ -1,0 +1,20 @@
+name: testing choice input
+on:
+  workflow_dispatch: 
+    inputs:
+      Environment:
+        required: true
+        description: "choose any enviroment"
+        type: choice
+        options:
+          - dev
+          - test
+          - deploy
+jobs:
+  test:
+    runs-on: macos-13
+    steps:
+      - name: printing name
+        run: echo "hi ${{ inputs.Environment }}"
+
+  
