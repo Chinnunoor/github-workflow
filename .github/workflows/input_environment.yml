@@ -1,0 +1,18 @@
+name: Deploy App
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Where do you want to deploy?"
+        type: environment
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.target }}
+
+    steps:
+    
+      - run: echo "Deploying to ${{ inputs.target }}"
