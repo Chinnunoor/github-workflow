@@ -9,7 +9,7 @@ jobs:
       - name: setting java version
         uses: actions/setup-java@v4
         with:
-          destribution: temurin
+          distribution: temurin
           java-version: "17"
       - name: printing files and messages
         run: |
