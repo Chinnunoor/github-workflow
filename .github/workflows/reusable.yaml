@@ -1,6 +1,11 @@
 name: workflow practice
 on: 
   workflow_call:
+    inputs:
+      javaversion:
+        description: what is java version
+        type: number
+        required: true
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -11,7 +16,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "21"
+          java-version: ${{ inputs.javaversion }}
       - name: printing files and messages
         run: |
           mvn clean compile
