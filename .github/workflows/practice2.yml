@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checksout repo
-        run: actions/checkout@v6
+        uses: : actions/checkout@v6
       - name: printing req output
-        run: ls
+        run: |
+          ls
           echo "Starting Maven workflow"
           echo "Level 1 completed"
         
