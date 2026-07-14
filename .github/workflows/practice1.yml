@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: printing manual worflow
-        run: 
+        run: |
           echo "Starting Maven workflow"
           echo "Level 1 completed"
   
