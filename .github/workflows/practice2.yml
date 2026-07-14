@@ -1,0 +1,20 @@
+# Modify the workflow so it:
+
+# Checks out your repository code.
+# Displays all files and folders in the repository.
+# # Keeps the existing printing step.
+
+name: practice2
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing manual worflow
+        run: |
+          echo "Starting Maven workflow"
+          echo "Level 1 completed"
+          ls
+        uses: actions/checkout@v4
+        
+  
