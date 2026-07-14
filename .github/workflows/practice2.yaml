@@ -1,13 +1,20 @@
-name: practice2
+name: practice workflows
 on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: checksout repo
+      - name: checksout repos
         uses: actions/checkout@v4
-      - name: printing req output
+      - name: setting java-17
+        uses: actions/setup-java@v4
+      - name: compling maven
         run: |
+          mvn clean
+          mvn compile
+          mvn package
+          mvn install
           ls
           echo "Starting Maven workflow"
           echo "Level 1 completed"
+          
