@@ -1,20 +1,19 @@
-name: practice workflows
+name: workflow practice
 on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: checksout repos
+      - name: checking out repo
         uses: actions/checkout@v4
-      - name: setting java-17
+      - name: setting java version
         uses: actions/setup-java@v4
-      - name: compling maven
+        with:
+          destribution: temurin
+          java-version: "17"
+      - name: printing files and messages
         run: |
-          mvn clean
-          mvn compile
-          mvn package
-          mvn install
+          mvn clean compile
           ls
-          echo "Starting Maven workflow"
-          echo "Level 1 completed"
-          
+           echo "Starting Maven workflow"
+           echo "Level 3 completed"
