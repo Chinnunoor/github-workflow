@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checksout repo
-        uses: : actions/checkout@v6
+        uses: : actions/checkout@v4
       - name: printing req output
         run: |
           ls
